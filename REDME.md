@@ -8,5 +8,22 @@ This project implements a Retrieval-Augmented Generation (RAG) application that 
 
 ## Prerequisites
 
+- install miniconda with python 3.8
 
-## Installation
+```bash
+wget https://repo.anaconda.com/miniconda Miniconda3-latest-Linux-x86_64.sh
+```
+
+```bash
+chmod +x Miniconda3-latest-Linux-x86_64.sh 
+```
+
+```bash
+./Miniconda3-latest-Linux-x86_64.sh
+```
+
+```bash
+conda create -n rag-app python=3.8
+```
+
+## Installation 
