@@ -22,7 +22,7 @@ class DataController(BaseConltoller):
         
         return True, SignalResponces.FILE_UPLOAD_SUCCESS.value
 
-    def generate_unique_file_name(self, original_file_name: str, project_id: str):
+    def generate_unique_file_path(self, original_file_name: str, project_id: str):
         """Generate a unique file name by appending a random string to the original file name."""
         random_string = self.generate_random_string()
         file_path = ProjectController().get_project_path(project_id=project_id)
@@ -34,7 +34,7 @@ class DataController(BaseConltoller):
             random_string = self.generate_random_string()
             new_file_path = os.path.join(file_path, f"{random_string}_{clean_file_name}")
         
-        return new_file_path
+        return new_file_path, random_string + "_" + clean_file_name
 
     def get_clean_file_name(self, file_name: str):
         """Remove special characters from the file name."""

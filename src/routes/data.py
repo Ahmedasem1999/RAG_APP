@@ -31,12 +31,12 @@ async def upload_file(project_id: str, file: UploadFile,
 
     # Save the file to the project directory
     # project_path = ProjectController().get_project_path(project_id=project_id)
-    file_path = data_controller.generate_unique_file_name(
+    file_path, file_id = data_controller.generate_unique_file_path(
         original_file_name=file.filename,
         project_id=project_id
     )
-
-    # print(f"File path: {file_path}")
+    print(f"File ID: {file_id}")
+    print(f"File path: {file_path}")
 
 
     try:
@@ -52,5 +52,7 @@ async def upload_file(project_id: str, file: UploadFile,
         )
 
     return JSONResponse(
-        content={"message": SignalResponces.FILE_UPLOAD_SUCCESS.value},
+        content={"message": SignalResponces.FILE_UPLOAD_SUCCESS.value,
+                 "file_id": file_id
+                },
     )        
