@@ -28,8 +28,15 @@ conda create -n env_name python=3.10
 
 ## Installation 
 
+### Install Install Tesseract OCR for Ubuntu/Debian
+
+```bash
+sudo apt update && sudo apt install -y tesseract-ocr
+```
+
 ## Run the mian program 
 
 ```bash
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
+

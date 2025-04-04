@@ -8,7 +8,7 @@ class BaseConltoller:
         # Initialize the base controller
         self.app_settings = get_settings()
         self.base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        print(f"Base path: {self.base_path}")
+        # print(f"Base path: {self.base_path}")
         
         self.file_paths = os.path.join(
             self.base_path,
